@@ -13,30 +13,30 @@ var velocity = Vector2()
 
 func _physics_process(delta):
 	#velocity.y += delta * GRAVITY
-	#if Input.is_action_pressed(\"move_down\"):
-	#	velocity.y = SPEED
-	#elif Input.is_action_pressed(\"move_up\"):
-	#	velocity.y =  -SPEED
-	#else:
-	#	velocity.y = 0
-
-	if Input.get_accelerometer().x < 0:
-		velocity.x = -SPEED
-	else:
-		velocity.x =  SPEED
-	if Input.get_accelerometer().y < 0:
+	if Input.is_action_pressed(\"move_down\"):
 		velocity.y = SPEED
+	elif Input.is_action_pressed(\"move_up\"):
+		velocity.y =  -SPEED
 	else:
-		velocity.y = -SPEED
+		velocity.y = 0
+
+	#if Input.get_accelerometer().x < 0:
+	#	velocity.x = -SPEED
+	#else:
+	#	velocity.x =  SPEED
+	#if Input.get_accelerometer().y < 0:
+	#	velocity.y = SPEED
+	#else:
+	#	velocity.y = -SPEED
 	
 
 
-	#if Input.is_action_pressed(\"move_left\"):
-	#	velocity.x = -SPEED
-	#elif Input.is_action_pressed(\"move_right\"):
-	#	velocity.x =  SPEED
-	#else:
-	#	velocity.x = 0
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x = -SPEED
+	elif Input.is_action_pressed(\"move_right\"):
+		velocity.x =  SPEED
+	else:
+		velocity.x = 0
 
 	# We don't need to multiply velocity by delta because \"move_and_slide\" already takes delta time into account.
 
