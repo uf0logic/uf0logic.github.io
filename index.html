@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVV LAB. - Digital-агентство web-дизайна</title>
+    <link rel="stylesheet" href="ui-kit.css">
+    <style>
+        /* Additional page-specific styles */
+        .page-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--color-black);
+        }
+        
+        .section {
+            position: relative;
+            width: 100%;
+        }
+        
+        .container-1920 {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .container-1840 {
+            max-width: 1840px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 115px;
+            background-color: var(--color-black);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 40px;
+        }
+        
+        .logo {
+            font-family: var(--font-family-headline);
+            font-size: 29px;
+            font-weight: var(--font-weight-regular);
+            letter-spacing: -1.45px;
+            color: var(--color-white);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .nav-links .link {
+            margin: 0;
+        }
+        
+        .nav-separator {
+            font-family: var(--font-family-primary);
+            font-size: 29px;
+            font-weight: var(--font-weight-medium);
+            color: var(--color-white);
+            margin: 0 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 1080px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        /* Sections spacing */
+        .section-spacing {
+            padding: 80px 0;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 1px;
+            background-color: var(--color-white);
+            opacity: 0.4;
+            width: 100%;
+        }
+        
+        /* Service Card */
+        .service-card {
+            backdrop-filter: blur(6px);
+            background-color: var(--color-white-opacity);
+            border-radius: 4px;
+            padding: 20px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* Case Card */
+        .case-card {
+            position: relative;
+            border-radius: 4px;
+            padding: 20px;
+            height: 448px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        
+        .case-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .case-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .case-tags {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Approach Item */
+        .approach-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        .approach-content {
+            display: flex;
+            align-items: center;
+            gap: 485px;
+        }
+        
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            width: 445px;
+            background-color: var(--color-black);
+            border: 2px solid var(--color-white-opacity);
+            border-radius: 4px;
+            padding: 20px;
+            z-index: 2000;
+        }
+        
+        .cookie-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">KVV lab.</div>
+                <nav class="nav-links">
+                    <a href="#about" class="link link-regular">О нас</a>
+                    <span class="nav-separator">,</span>
+                    <a href="#cases" class="link link-regular">Кейсы</a>
+                    <span class="nav-separator">,</span>
+                    <a href="#approach" class="link link-regular">Подход</a>
+                    <span class="nav-separator">,</span>
+                    <a href="#services" class="link link-regular">Услуги</a>
+                    <span class="nav-separator">,</span>
+                    <a href="#contacts" class="link link-regular">Контакты</a>
+                </nav>
+                <a href="#contacts" class="link link-regular">Обсудить проект</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <img src="assets/hero-bg.png" alt="Hero background" class="hero-bg">
+            <div class="hero-content">
+                <p class="text-left text-white" style="opacity: 0.6; position: absolute; right: 286px; top: 259px; transform: translateX(100%);">Digital-агентство web-дизайна</p>
+                <h1 class="heading-1" style="position: absolute; right: 640px; top: 135px; transform: translateX(100%);">KVV LAB.</h1>
+                <div class="heading-2" style="position: absolute; left: 40px; bottom: 250px;">
+                    <p>Отражаем вашу</p>
+                    <p>индивидуальность</p>
+                    <p>в веб-пространстве</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section section-spacing" id="about">
+            <div class="container-1920">
+                <p class="text-about text-center" style="max-width: 1840px; margin: 0 auto;">
+                    Молодая и офигенно талантливая студия. Ребята, которые кайфуют от дизайна, кода и гейм-дева. Делаем не просто сайты — делаем цифровой опыт, который цепляет.
+                </p>
+                <div style="margin-top: 200px; max-width: 290px; margin-left: 970px;">
+                    <p class="text-left" style="opacity: 0.6; margin-bottom: 20px;">
+                        Мы — команда, которая кайфует от процесса. Создаем имиджевые и фестивальные сайты, с интерактивом и 3D.
+                    </p>
+                    <p class="text-left" style="opacity: 0.6;">
+                        Раздвигаем границы веб-дизайна, создавая имиджевые и новаторские проекты с уникальным цифровым опытом.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section class="section section-spacing" id="approach">
+            <div class="container-1840">
+                <h2 class="heading-2 text-center" style="margin-bottom: 80px;">Почему мы?</h2>
+                <div style="display: flex; flex-direction: column; gap: 0;">
+                    <div class="divider"></div>
+                    <div class="approach-item">
+                        <div class="approach-content">
+                            <p class="text-left" style="opacity: 0.6; width: 445px;">
+                                Общаемся без воды, пафоса и посредников. Мы верим и желаем крепкое сотрудничество и долгую дружбу с нашими клиентами.
+                            </p>
+                            <h3 class="heading-3">С нами легко</h3>
+                        </div>
+                        <p class="text-descriptor" style="opacity: 0.4;">/01</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="approach-item">
+                        <div class="approach-content">
+                            <p class="text-left" style="opacity: 0.6; width: 445px;">
+                                Нам важно, чтобы сайт не просто был, а чтобы он решал задачу по созданию вашего сильного цифрового образа.
+                            </p>
+                            <h3 class="heading-3">Болеем за результат</h3>
+                        </div>
+                        <p class="text-descriptor" style="opacity: 0.4;">/02</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="approach-item">
+                        <div class="approach-content">
+                            <p class="text-left" style="opacity: 0.6; width: 445px;">
+                                Мы всегда в курсе последних событий в мире дизайна и разработки, чтобы вы и ваш продукт тоже шли в ногу со временем.
+                            </p>
+                            <h3 class="heading-3">Следим за трендами</h3>
+                        </div>
+                        <p class="text-descriptor" style="opacity: 0.4;">/03</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="approach-item">
+                        <div class="approach-content">
+                            <p class="text-left" style="opacity: 0.6; width: 445px;">
+                                Используем передовые технологии и техники, которые уже стабильно работают. Никаких экспериментов вживую.
+                            </p>
+                            <h3 class="heading-3">Передовые технологии</h3>
+                        </div>
+                        <p class="text-descriptor" style="opacity: 0.4;">/04</p>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div style="margin-top: 40px; text-align: center;">
+                    <button class="btn btn-primary">Хочу также</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section -->
+        <section class="section section-spacing" id="cases">
+            <div class="container-1840">
+                <h2 class="heading-2 text-center" style="margin-bottom: 80px;">
+                    Делаем лучшее<br>для лучших
+                </h2>
+                
+                <!-- Case 1 -->
+                <div class="case-card" style="margin-bottom: 40px;">
+                    <img src="assets/case-1.png" alt="Море перемен" class="case-image">
+                    <div class="case-content" style="justify-content: space-between; height: 100%;">
+                        <div>
+                            <h3 class="heading-3" style="margin-bottom: 20px;">Море перемен</h3>
+                            <p class="text-left" style="opacity: 0.6; width: 270px;">
+                                Лэндинг коворкинга для специалистов помогающих профессий.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 9px;">
+                            <div style="width: 63px; height: 63px; border-radius: 50%; background: var(--color-white); display: flex; align-items: center; justify-content: center;">
+                                <span class="text-white" style="color: var(--color-black);">DP</span>
+                            </div>
+                            <div style="width: 63px; height: 63px; border-radius: 50%; background: var(--color-white); display: flex; align-items: center; justify-content: center;">
+                                <span class="text-white" style="color: var(--color-black);">UI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-tags" style="position: relative; z-index: 1;">
+                        <span class="text-left">Лэндинг</span>
+                        <span class="text-left">B2C</span>
+                        <span class="text-left">Коммерческий</span>
+                        <span class="text-left">2025</span>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-card" style="margin-bottom: 40px;">
+                    <img src="assets/case-2.png" alt="Karaoke star hits" class="case-image">
+                    <div class="case-content">
+                        <h3 class="heading-3" style="margin-bottom: 20px;">Karaoke star hits</h3>
+                        <p class="text-left" style="opacity: 0.6; width: 270px;">
+                            Лэндинг для презентации и продажи смарт караоке приставки.
+                        </p>
+                    </div>
+                    <div class="case-tags" style="position: relative; z-index: 1;">
+                        <span class="text-left">Лэндинг</span>
+                        <span class="text-left">B2C</span>
+                        <span class="text-left">Коммерческий</span>
+                        <span class="text-left">2025</span>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="case-card">
+                    <img src="assets/case-3.png" alt="CD Projekt Red" class="case-image">
+                    <div class="case-content">
+                        <h3 class="heading-3" style="margin-bottom: 20px;">CD Projekt Red</h3>
+                        <p class="text-left" style="opacity: 0.6; width: 270px;">
+                            Дизайн-концепт корпоративного сайта польской игровой студии.
+                        </p>
+                    </div>
+                    <div class="case-tags" style="position: relative; z-index: 1;">
+                        <span class="text-left">Корпоративный сайт</span>
+                        <span class="text-left">B2C</span>
+                        <span class="text-left">Дизайн-концепт</span>
+                        <span class="text-left">2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services" style="position: relative; height: 1080px; overflow: hidden;">
+            <img src="assets/hero-bg.png" alt="Services background" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <div class="container-1920" style="position: relative; z-index: 1; height: 100%; padding: 40px;">
+                <div class="heading-2" style="position: absolute; left: 40px; bottom: 165px;">
+                    <p>Делаем проекты</p>
+                    <p>от которых</p>
+                    <p>сносит крышу</p>
+                </div>
+                
+                <div style="position: absolute; right: 40px; top: 40px; display: flex; flex-direction: column; gap: 20px; width: 600px;">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <p class="text-descriptor" style="opacity: 0.4;">/01</p>
+                        <div>
+                            <h3 class="heading-3" style="margin-bottom: 20px;">Имиджевые сайты</h3>
+                            <p class="text-left" style="opacity: 0.6; width: 425px;">
+                                Уникальный цифровой продукт, который становится визитной карточкой вашего бренда и демонстрирует его инновационность.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <p class="text-descriptor" style="opacity: 0.4;">/02</p>
+                        <div>
+                            <h3 class="heading-3" style="margin-bottom: 20px;">Фестивальные сайты</h3>
+                            <p class="text-left" style="opacity: 0.6; width: 425px;">
+                                Яркие, зрелищные веб-сайты, которые создаются для инфоповода и рекламы выставок, промо-событий, ярких персон или брендов.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <p class="text-descriptor" style="opacity: 0.4;">/03</p>
+                        <div>
+                            <h3 class="heading-3" style="margin-bottom: 20px;">Геймификация интерфейсов</h3>
+                            <p class="text-left" style="opacity: 0.6; width: 425px;">
+                                Внедряем игровые механики для повышения вовлеченности к вашему бизнесу. Превращаем рутинные действия в интересные взаимодействия.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <p class="text-descriptor" style="opacity: 0.4;">/04</p>
+                        <div>
+                            <h3 class="heading-3" style="margin-bottom: 20px;">Брендинг</h3>
+                            <p class="text-left" style="opacity: 0.6; width: 425px;">
+                                Логотип и айдентика, которая идеально интегрируется в цифровую среду вашего нового сайта.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section section-spacing" id="contacts">
+            <div class="container-1840">
+                <h2 class="headline-discuss text-center" style="margin-bottom: 222px;">Обсудить проект</h2>
+                
+                <div style="display: flex; gap: 40px;">
+                    <p class="text-left" style="opacity: 0.6; width: 290px;">
+                        Готовы взорвать интернет? Давайте обсудим, как мы можем помочь именно вашему бренду выделиться и запомниться.
+                    </p>
+                    
+                    <form class="form-field" style="width: 910px; display: flex; flex-direction: column; gap: 40px;">
+                        <div class="form-field">
+                            <label class="form-field-label">Имя*</label>
+                            <div class="form-field-input"></div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">E-mail*</label>
+                            <div class="form-field-input"></div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">Телефон</label>
+                            <div class="form-field-input"></div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-field-label">Комментарий</label>
+                            <div class="form-field-input"></div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <input type="checkbox" id="privacy" style="width: 24px; height: 24px; border: 2px solid var(--color-white); border-radius: 4px; opacity: 0.6;">
+                            <label for="privacy" class="text-left" style="opacity: 0.6;">
+                                Я согласен с <span>политикой обработки персональных данных</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="section" style="position: relative; padding: 40px; margin-top: 200px;">
+            <div class="container-1840" style="position: relative;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 80px;">
+                    <!-- Navigation -->
+                    <div>
+                        <p class="text-left" style="opacity: 0.6; margin-bottom: 40px;">Навигация</p>
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <a href="#about" class="link link-regular">О нас</a>
+                            <a href="#approach" class="link link-regular">Подход</a>
+                            <a href="#cases" class="link link-regular">Кейсы</a>
+                            <a href="#services" class="link link-regular">Услуги</a>
+                            <a href="#contacts" class="link link-regular">Контакты</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Links -->
+                    <div>
+                        <p class="text-left" style="opacity: 0.6; margin-bottom: 40px;">Ссылки</p>
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <a href="#" class="link link-regular">Телеграм</a>
+                            <a href="#" class="link link-regular">Dprofile</a>
+                            <a href="#" class="link link-regular">Behance</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contacts -->
+                    <div>
+                        <p class="text-left" style="opacity: 0.6; margin-bottom: 40px;">Контакты</p>
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <p class="text-link-button">+7 (952) 440-03-26</p>
+                            <p class="text-link-button">+7 (995) 132-20-11</p>
+                            <p class="text-link-button">@slava_uxui</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px;">
+                    <div>
+                        <p class="text-left" style="opacity: 0.6; margin-bottom: 20px;">
+                            ИП Козин Вячеслав Васильевич<br>
+                            ИНН 1234567890<br>
+                            ОГРНИП 1234567890
+                        </p>
+                        <p class="text-left" style="opacity: 0.6;">© KVV Lab. 2k25</p>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-end;">
+                        <a href="#" class="link link-small">Политика конфиденциальности</a>
+                        <a href="#" class="link link-small">Политика использования Cookie</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: right;">
+                    <a href="mailto:kvvlab.agency@gmail.com" class="link-email text-orange">kvvlab.agency@gmail.com</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cookie Banner -->
+        <div class="cookie-banner" id="cookieBanner">
+            <div class="cookie-content">
+                <p class="text-left" style="opacity: 0.6;">Мы используем<br>файлы Cookie</p>
+                <a href="#" class="link link-regular">Принять</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
