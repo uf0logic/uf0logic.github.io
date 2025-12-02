@@ -1,21 +1,34 @@
-// Small navigation toggle for mobile
+// Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function () {
 	const toggle = document.querySelector('.nav-toggle');
 	const nav = document.getElementById('main-navigation');
+	const closeButton = document.querySelector('.mobile-menu-close');
 
 	if (!toggle || !nav) return;
 
+	// Toggle menu
 	toggle.addEventListener('click', function () {
 		const expanded = this.getAttribute('aria-expanded') === 'true';
 		this.setAttribute('aria-expanded', String(!expanded));
 		nav.classList.toggle('mobile-open');
+		document.body.style.overflow = !expanded ? 'hidden' : '';
 	});
+
+	// Close button
+	if (closeButton) {
+		closeButton.addEventListener('click', function () {
+			nav.classList.remove('mobile-open');
+			toggle.setAttribute('aria-expanded', 'false');
+			document.body.style.overflow = '';
+		});
+	}
 
 	// Close mobile nav when a link is clicked
 	nav.addEventListener('click', function (e) {
 		if (e.target.tagName === 'A') {
 			nav.classList.remove('mobile-open');
 			toggle.setAttribute('aria-expanded', 'false');
+			document.body.style.overflow = '';
 		}
 	});
   
@@ -25,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (nav.classList.contains('mobile-open')) {
 				nav.classList.remove('mobile-open');
 				toggle.setAttribute('aria-expanded', 'false');
+				document.body.style.overflow = '';
 				toggle.focus();
 			}
 		}
@@ -50,8 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			updateFocusable();
 			if (firstFocusable) firstFocusable.focus();
 			nav.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
 		} else {
 			nav.setAttribute('aria-hidden', 'true');
+			document.body.style.overflow = '';
 		}
 	});
 	observer.observe(nav, { attributes: true, attributeFilter: ['class'] });
