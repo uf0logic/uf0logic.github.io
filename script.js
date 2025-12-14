@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		}
 	});
+<<<<<<< HEAD
 });
 
 // Scroll-based logo animation
@@ -704,3 +705,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}, 300);
 	});
 })();
+=======
+});
+>>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
