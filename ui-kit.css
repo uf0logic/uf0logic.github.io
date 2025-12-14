@@ -22,6 +22,42 @@
    ============================================ */
 
 /* ============================================
+   FONT FACE DECLARATIONS
+   ============================================ */
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('assets/Fonts/InterTight-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('assets/Fonts/InterTight-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('assets/Fonts/InterTight-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SouthGhetto';
+  src: url('assets/Fonts/SouthGhetto.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
    CSS CUSTOM PROPERTIES (Design Tokens)
    ============================================ */
 
@@ -147,6 +183,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-width: none; /* Firefox - hide scrollbar */
+  -ms-overflow-style: none; /* IE and Edge - hide scrollbar */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -157,6 +198,22 @@ body {
   background-color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text Selection - Figma-style inverted colors */
+::selection {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+::-moz-selection {
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 /* ============================================
@@ -556,6 +613,21 @@ body {
   transition: opacity var(--transition-base);
   background-color: transparent;
   overflow: hidden;
+  gap: 12px;
+  position: relative;
+}
+
+/* Arrow icon for buttons */
+.btn::after {
+  content: '';
+  display: inline-block;
+  width: 26px;
+  height: 15px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='15' viewBox='0 0 26 15' fill='none'%3E%3Cpath d='M1 6.36377C0.447715 6.36377 0 6.81148 0 7.36377C0 7.91605 0.447715 8.36377 1 8.36377V7.36377V6.36377ZM25.7071 8.07088C26.0976 7.68035 26.0976 7.04719 25.7071 6.65666L19.3431 0.292702C18.9526 -0.0978227 18.3195 -0.0978227 17.9289 0.292702C17.5384 0.683226 17.5384 1.31639 17.9289 1.70692L23.5858 7.36377L17.9289 13.0206C17.5384 13.4111 17.5384 14.0443 17.9289 14.4348C18.3195 14.8254 18.9526 14.8254 19.3431 14.4348L25.7071 8.07088ZM1 7.36377V8.36377H25V7.36377V6.36377H1V7.36377Z' fill='%23FAFAFA'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
 }
 
 .btn:focus {
@@ -570,7 +642,7 @@ body {
 }
 
 .btn-primary:hover:not(:disabled) {
-  opacity: 0.6;
+  opacity: 0.6
 }
 
 .btn-primary:disabled {
@@ -586,17 +658,32 @@ body {
   .btn {
     font-size: 24px;
   }
+  
+  .btn::after {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 1365px) {
   .btn {
     font-size: 24px;
   }
+  
+  .btn::after {
+    width: 22px;
+    height: 13px;
+  }
 }
 
 @media (max-width: 767px) {
   .btn {
     font-size: 16px;
+  }
+  
+  .btn::after {
+    width: 18px;
+    height: 11px;
   }
 }
 
@@ -655,7 +742,7 @@ body {
    ============================================ */
 
 .link {
-  display: inline-block;
+  display: inline;
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-text);
@@ -663,11 +750,17 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-base);
+  padding: 2px 4px;
+  margin: -2px -4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  width: auto;
+  max-width: fit-content;
 }
 
 .link-regular {
   font-size: 29px;
-  height: 35px;
+  line-height: 1.2;
 }
 
 .link-small {
@@ -683,7 +776,8 @@ body {
 /* Link States */
 .link:hover {
   background-color: var(--color-white);
-  color: var(--color-white);
+  color: var(--color-black);
+  border-radius: 2px;
 }
 
 .link:disabled,
@@ -691,6 +785,35 @@ body {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/* Ensure buttons with link class follow link styles */
+button.link {
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  font: inherit;
+  text-align: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: auto;
+  max-width: fit-content;
+}
+
+button.link:focus {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Ensure links in flex containers don't stretch */
+.footer-column a.link,
+.footer-column .link {
+  align-self: flex-start;
+  width: auto;
+  max-width: fit-content;
 }
 
 /* Responsive Link Sizes */
@@ -764,10 +887,43 @@ body {
   opacity: 0.4;
   border: none;
   padding: 0;
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  color: var(--color-white);
+  transition: opacity var(--transition-base);
 }
 
 .form-field-input.active {
   opacity: 1;
+}
+
+/* Style actual input and textarea elements */
+input.form-field-input,
+textarea.form-field-input {
+  height: auto;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-white);
+  border-radius: 0;
+  outline: none;
+}
+
+input.form-field-input:focus,
+textarea.form-field-input:focus {
+  opacity: 1;
+  border-bottom-color: var(--color-white);
+}
+
+input.form-field-input::placeholder,
+textarea.form-field-input::placeholder {
+  color: var(--color-white);
+  opacity: 0.4;
+}
+
+textarea.form-field-input {
+  min-height: 100px;
+  resize: vertical;
 }
 
 /* Legacy Input Support */
