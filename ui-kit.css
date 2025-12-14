@@ -22,7 +22,6 @@
    ============================================ */
 
 /* ============================================
-<<<<<<< HEAD
    FONT FACE DECLARATIONS
    ============================================ */
 
@@ -59,8 +58,6 @@
 }
 
 /* ============================================
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
    CSS CUSTOM PROPERTIES (Design Tokens)
    ============================================ */
 
@@ -208,7 +205,6 @@ body {
   display: none;
 }
 
-<<<<<<< HEAD
 /* Text Selection - Figma-style inverted colors */
 ::selection {
   background-color: var(--color-white);
@@ -220,8 +216,6 @@ body {
   color: var(--color-black);
 }
 
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 /* ============================================
    TYPOGRAPHY COMPONENTS (From Figma Design)
    ============================================ */
@@ -619,7 +613,6 @@ body {
   transition: opacity var(--transition-base);
   background-color: transparent;
   overflow: hidden;
-<<<<<<< HEAD
   gap: 12px;
   position: relative;
 }
@@ -635,8 +628,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   flex-shrink: 0;
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .btn:focus {
@@ -651,11 +642,7 @@ body {
 }
 
 .btn-primary:hover:not(:disabled) {
-<<<<<<< HEAD
   opacity: 0.6
-=======
-  opacity: 0.6;
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .btn-primary:disabled {
@@ -671,42 +658,33 @@ body {
   .btn {
     font-size: 24px;
   }
-<<<<<<< HEAD
   
   .btn::after {
     width: 18px;
     height: 18px;
   }
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 @media (max-width: 1365px) {
   .btn {
     font-size: 24px;
   }
-<<<<<<< HEAD
   
   .btn::after {
     width: 22px;
     height: 13px;
   }
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 @media (max-width: 767px) {
   .btn {
     font-size: 16px;
   }
-<<<<<<< HEAD
   
   .btn::after {
     width: 18px;
     height: 11px;
   }
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 /* Legacy Button Variants (for backward compatibility) */
@@ -764,11 +742,7 @@ body {
    ============================================ */
 
 .link {
-<<<<<<< HEAD
   display: inline;
-=======
-  display: inline-block;
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-text);
@@ -776,24 +750,17 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-base);
-<<<<<<< HEAD
   padding: 2px 4px;
   margin: -2px -4px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   width: auto;
   max-width: fit-content;
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .link-regular {
   font-size: 29px;
-<<<<<<< HEAD
   line-height: 1.2;
-=======
-  height: 35px;
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .link-small {
@@ -809,12 +776,8 @@ body {
 /* Link States */
 .link:hover {
   background-color: var(--color-white);
-<<<<<<< HEAD
   color: var(--color-black);
   border-radius: 2px;
-=======
-  color: var(--color-white);
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .link:disabled,
@@ -824,7 +787,6 @@ body {
   pointer-events: none;
 }
 
-<<<<<<< HEAD
 /* Ensure buttons with link class follow link styles */
 button.link {
   background: none;
@@ -854,8 +816,6 @@ button.link:focus {
   max-width: fit-content;
 }
 
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 /* Responsive Link Sizes */
 @media (min-width: 1366px) and (max-width: 1919px) {
   .link-regular {
@@ -927,20 +887,16 @@ button.link:focus {
   opacity: 0.4;
   border: none;
   padding: 0;
-<<<<<<< HEAD
   font-family: var(--font-family-primary);
   font-size: 18px;
   color: var(--color-white);
   transition: opacity var(--transition-base);
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 }
 
 .form-field-input.active {
   opacity: 1;
 }
 
-<<<<<<< HEAD
 /* Style actual input and textarea elements */
 input.form-field-input,
 textarea.form-field-input {
@@ -970,8 +926,6 @@ textarea.form-field-input {
   resize: vertical;
 }
 
-=======
->>>>>>> 8bd2327579776c3adb1092d2155a59ce5ebe150a
 /* Legacy Input Support */
 .input {
   display: block;
